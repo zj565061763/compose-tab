@@ -3,10 +3,7 @@ package com.sd.demo.compose_tab
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.*
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Tab
@@ -26,6 +23,18 @@ class SampleScrollableTabRow : ComponentActivity() {
                     Content()
                 }
             }
+        }
+    }
+
+    init {
+        try {
+            Class
+                .forName("androidx.compose.material3.TabRowKt")
+                .getDeclaredField("ScrollableTabRowMinimumTabWidth").apply {
+                    isAccessible = true
+                }.set(this, 0f)
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
     }
 }
@@ -54,7 +63,9 @@ private fun Content() {
                     onClick = {
                         selectedTab = item
                     },
-                    modifier = Modifier.height(45.dp)
+                    modifier = Modifier
+                        .height(45.dp)
+                        .widthIn(45.dp)
                 ) {
                     Text(text = item)
                 }
