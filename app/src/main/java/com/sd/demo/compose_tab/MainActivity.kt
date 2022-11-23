@@ -47,5 +47,13 @@ private fun Content(
         ) {
             Text(text = "SampleTabRow")
         }
+
+        Button(
+            onClick = {
+                activity.startActivity(Intent(activity, SampleScrollableTabRow::class.java))
+            }
+        ) {
+            Text(text = "SampleScrollableTabRow")
+        }
     }
 }
