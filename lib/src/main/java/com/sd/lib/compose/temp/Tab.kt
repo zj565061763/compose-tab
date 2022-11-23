@@ -16,7 +16,7 @@ fun FTab(
     modifier: Modifier = Modifier,
     enabled: Boolean = true,
     selectedContentColor: Color = LocalContentColor.current,
-    unselectedContentColor: Color = selectedContentColor,
+    unselectedContentColor: Color = selectedContentColor.copy(alpha = 0.3f),
     interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
     content: @Composable ColumnScope.() -> Unit
 ) {
