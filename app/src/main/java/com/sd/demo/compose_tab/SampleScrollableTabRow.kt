@@ -11,8 +11,8 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.sd.demo.compose_tab.ui.theme.AppTheme
-import com.sd.lib.compose.temp.FScrollableTabRow
-import com.sd.lib.compose.temp.FTab
+import com.sd.lib.compose.tab.FScrollableTabRow
+import com.sd.lib.compose.tab.FTab
 
 class SampleScrollableTabRow : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,4 +1,4 @@
-package com.sd.lib.compose.temp
+package com.sd.lib.compose.tab
 
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable

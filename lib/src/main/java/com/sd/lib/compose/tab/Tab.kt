@@ -1,4 +1,4 @@
-package com.sd.lib.compose.temp
+package com.sd.lib.compose.tab
 
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.ColumnScope
