@@ -25,18 +25,6 @@ class SampleScrollableTabRow : ComponentActivity() {
             }
         }
     }
-
-    init {
-        try {
-            Class
-                .forName("androidx.compose.material3.TabRowKt")
-                .getDeclaredField("ScrollableTabRowMinimumTabWidth").apply {
-                    isAccessible = true
-                }.set(this, 0f)
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-    }
 }
 
 @Composable

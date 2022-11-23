@@ -58,6 +58,7 @@ fun FScrollableTabRow(
         },
     tabs: @Composable @UiComposable () -> Unit,
 ) {
+    ScrollableTabRowMinimumTabWidthHook
     ScrollableTabRow(
         selectedTabIndex = selectedTabIndex,
         modifier = modifier,
@@ -68,4 +69,16 @@ fun FScrollableTabRow(
         divider = divider,
         tabs = tabs,
     )
+}
+
+private val ScrollableTabRowMinimumTabWidthHook by lazy {
+    try {
+        val clazz = Class.forName("androidx.compose.material3.TabRowKt")
+        val field = clazz.getDeclaredField("ScrollableTabRowMinimumTabWidth").apply {
+            isAccessible = true
+        }
+        field.set(null, 0f)
+    } catch (e: Exception) {
+        e.printStackTrace()
+    }
 }
