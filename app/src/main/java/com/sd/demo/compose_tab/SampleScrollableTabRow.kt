@@ -6,13 +6,13 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Tab
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.sd.demo.compose_tab.ui.theme.AppTheme
 import com.sd.lib.compose.temp.FScrollableTabRow
+import com.sd.lib.compose.temp.FTab
 
 class SampleScrollableTabRow : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,7 +46,7 @@ private fun Content() {
             modifier = Modifier.fillMaxWidth()
         ) {
             listTab.forEach { item ->
-                Tab(
+                FTab(
                     selected = item == selectedTab,
                     onClick = {
                         selectedTab = item

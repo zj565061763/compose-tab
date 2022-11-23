@@ -9,12 +9,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Tab
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.sd.demo.compose_tab.ui.theme.AppTheme
+import com.sd.lib.compose.temp.FTab
 import com.sd.lib.compose.temp.FTabRow
 
 class SampleTabRow : ComponentActivity() {
@@ -43,7 +43,7 @@ private fun Content() {
             modifier = Modifier.fillMaxWidth()
         ) {
             listTab.forEach { item ->
-                Tab(
+                FTab(
                     selected = item == selectedTab,
                     onClick = {
                         selectedTab = item
