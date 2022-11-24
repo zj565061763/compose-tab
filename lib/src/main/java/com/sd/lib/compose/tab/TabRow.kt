@@ -3,7 +3,6 @@ package com.sd.lib.compose.tab
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.UiComposable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -21,11 +20,10 @@ fun FTabRow(
             width = 30.dp,
         )
     },
-    divider: @Composable @UiComposable () -> Unit =
-        @Composable {
-            Divider(thickness = Dp.Hairline)
-        },
-    tabs: @Composable @UiComposable () -> Unit,
+    divider: @Composable () -> Unit = @Composable {
+        Divider(thickness = Dp.Hairline)
+    },
+    tabs: @Composable () -> Unit,
 ) {
     TabRow(
         selectedTabIndex = selectedTabIndex,
@@ -52,11 +50,10 @@ fun FScrollableTabRow(
             width = 20.dp,
         )
     },
-    divider: @Composable @UiComposable () -> Unit =
-        @Composable {
-            Divider(thickness = Dp.Hairline)
-        },
-    tabs: @Composable @UiComposable () -> Unit,
+    divider: @Composable () -> Unit = @Composable {
+        Divider(thickness = Dp.Hairline)
+    },
+    tabs: @Composable () -> Unit,
 ) {
     ScrollableTabRowMinimumTabWidthHook
     ScrollableTabRow(
