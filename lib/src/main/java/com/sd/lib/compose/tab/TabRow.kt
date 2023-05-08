@@ -1,6 +1,10 @@
 package com.sd.lib.compose.tab
 
-import androidx.compose.material3.*
+import androidx.compose.material3.Divider
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.ScrollableTabRow
+import androidx.compose.material3.TabPosition
+import androidx.compose.material3.TabRow
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -70,11 +74,11 @@ fun FScrollableTabRow(
 
 private val ScrollableTabRowMinimumTabWidthHook by lazy {
     try {
-        val clazz = Class.forName("androidx.compose.material3.TabRowKt")
-        val field = clazz.getDeclaredField("ScrollableTabRowMinimumTabWidth").apply {
-            isAccessible = true
-        }
-        field.set(null, 0f)
+        Class
+            .forName("androidx.compose.material3.TabRowKt")
+            .getDeclaredField("ScrollableTabRowMinimumTabWidth").apply {
+                isAccessible = true
+            }.set(null, 0f)
     } catch (e: Exception) {
         e.printStackTrace()
     }
