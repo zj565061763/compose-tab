@@ -1,5 +1,6 @@
 package com.sd.lib.compose.tab
 
+import android.annotation.SuppressLint
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.tween
@@ -21,6 +22,7 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
+@SuppressLint("ModifierParameter")
 @Composable
 fun FTabIndicator(
     tabPositions: List<TabPosition>,
