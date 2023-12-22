@@ -19,8 +19,7 @@ fun FTabRow(
     contentColor: Color = MaterialTheme.colorScheme.onSurface,
     indicator: @Composable (tabPositions: List<TabPosition>) -> Unit = @Composable { tabPositions ->
         FTabIndicator(
-            tabPositions = tabPositions,
-            selectedTabIndex = selectedTabIndex,
+            position = tabPositions[selectedTabIndex],
             width = 30.dp,
         )
     },
@@ -49,8 +48,7 @@ fun FScrollableTabRow(
     edgePadding: Dp = 0.dp,
     indicator: @Composable (tabPositions: List<TabPosition>) -> Unit = @Composable { tabPositions ->
         FTabIndicator(
-            tabPositions = tabPositions,
-            selectedTabIndex = selectedTabIndex,
+            position = tabPositions[selectedTabIndex],
             width = 20.dp,
         )
     },

@@ -25,8 +25,7 @@ import androidx.compose.ui.unit.dp
 @SuppressLint("ModifierParameter")
 @Composable
 fun FTabIndicator(
-    tabPositions: List<TabPosition>,
-    selectedTabIndex: Int,
+    position: TabPosition,
     width: Dp? = null,
     height: Dp = 2.dp,
     color: Color = LocalContentColor.current,
@@ -36,7 +35,7 @@ fun FTabIndicator(
     Box(
         modifier
             .fTabIndicatorOffset(
-                currentPosition = tabPositions[selectedTabIndex],
+                position = position,
                 width = width,
             )
             .height(height)
@@ -46,11 +45,11 @@ fun FTabIndicator(
 }
 
 fun Modifier.fTabIndicatorOffset(
-    currentPosition: TabPosition,
+    position: TabPosition,
     width: Dp? = null,
 ): Modifier = composed {
 
-    val targetWidth = width ?: currentPosition.width
+    val targetWidth = width ?: position.width
     val animateWidth = animateDpAsState(
         targetValue = targetWidth,
         animationSpec = tween(durationMillis = 250, easing = FastOutSlowInEasing),
@@ -58,9 +57,9 @@ fun Modifier.fTabIndicatorOffset(
     ).value
 
     val targetOffset = if (width == null) {
-        currentPosition.left
+        position.left
     } else {
-        currentPosition.left + (currentPosition.width - width) / 2
+        position.left + (position.width - width) / 2
     }
     val animateOffset = animateDpAsState(
         targetValue = targetOffset,
