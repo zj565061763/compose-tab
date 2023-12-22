@@ -3,11 +3,19 @@ package com.sd.demo.compose_tab
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.sd.demo.compose_tab.ui.theme.AppTheme
@@ -48,9 +56,7 @@ private fun Content() {
             listTab.forEach { item ->
                 FTab(
                     selected = item == selectedTab,
-                    onClick = {
-                        selectedTab = item
-                    },
+                    onClick = { selectedTab = item },
                     modifier = Modifier
                         .height(45.dp)
                         .widthIn(45.dp)
