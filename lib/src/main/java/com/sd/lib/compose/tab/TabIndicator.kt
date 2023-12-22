@@ -51,9 +51,10 @@ fun Modifier.fTabIndicatorOffset(
 ): Modifier = composed {
 
     val targetWidth = width ?: currentPosition.width
-    val widthValue = animateDpAsState(
+    val animateWidth = animateDpAsState(
         targetValue = targetWidth,
-        animationSpec = tween(durationMillis = 250, easing = FastOutSlowInEasing)
+        animationSpec = tween(durationMillis = 250, easing = FastOutSlowInEasing),
+        label = "",
     ).value
 
     val targetOffset = if (width == null) {
@@ -61,12 +62,13 @@ fun Modifier.fTabIndicatorOffset(
     } else {
         currentPosition.left + (currentPosition.width - width) / 2
     }
-    val offsetValue = animateDpAsState(
+    val animateOffset = animateDpAsState(
         targetValue = targetOffset,
-        animationSpec = tween(durationMillis = 250, easing = FastOutSlowInEasing)
+        animationSpec = tween(durationMillis = 250, easing = FastOutSlowInEasing),
+        label = "",
     ).value
 
     wrapContentSize(Alignment.BottomStart)
-        .offset(x = offsetValue)
-        .width(widthValue)
+        .offset(x = animateOffset)
+        .width(animateWidth)
 }
