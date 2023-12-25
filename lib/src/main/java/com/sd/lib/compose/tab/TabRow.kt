@@ -13,8 +13,8 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun FTabRow(
-    selectedTabIndex: Int,
     modifier: Modifier = Modifier,
+    selectedTabIndex: Int,
     containerColor: Color = Color.Transparent,
     contentColor: Color = MaterialTheme.colorScheme.onSurface,
     indicator: @Composable (tabPositions: List<TabPosition>) -> Unit = @Composable { tabPositions ->
@@ -41,8 +41,8 @@ fun FTabRow(
 
 @Composable
 fun FScrollableTabRow(
-    selectedTabIndex: Int,
     modifier: Modifier = Modifier,
+    selectedTabIndex: Int,
     containerColor: Color = Color.Transparent,
     contentColor: Color = MaterialTheme.colorScheme.onSurface,
     edgePadding: Dp = 0.dp,

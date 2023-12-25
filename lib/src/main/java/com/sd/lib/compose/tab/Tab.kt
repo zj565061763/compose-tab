@@ -11,9 +11,9 @@ import androidx.compose.ui.graphics.Color
 
 @Composable
 fun FTab(
+    modifier: Modifier = Modifier,
     selected: Boolean,
     onClick: () -> Unit,
-    modifier: Modifier = Modifier,
     enabled: Boolean = true,
     selectedContentColor: Color = LocalContentColor.current,
     unselectedContentColor: Color = selectedContentColor.copy(alpha = 0.3f),
